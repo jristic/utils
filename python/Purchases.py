@@ -38,8 +38,14 @@ while line != '':
                 val = ""
                 state = State.NoFound
     
+    # this is to catch the case where the number is followed immediately by end of file
+    if val != "":
+        fVal = float(val)
+        print("Purchase of: " + val + " dollars. " + str(fVal))
+        totalVal += fVal
+        print("Running total: " + str(totalVal))
+        val = ""
     
-
     state = State.NoFound
     val = ""
     line = f.readline()
